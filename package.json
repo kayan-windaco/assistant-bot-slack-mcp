@@ -1,5 +1,5 @@
 {
-  "name": "partnership-slack-mcp",
+  "name": "assistant-bot-slack-mcp",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
