@@ -20,7 +20,7 @@ const slack = new WebClient(slackToken);
 
 function createMcpServer() {
   const mcpServer = new McpServer({
-    name: "partnership-slack-bot",
+    name: "assistant-slack-bot",
     version: "1.0.0"
   });
 
@@ -28,7 +28,7 @@ function createMcpServer() {
     "slack_post_message",
     {
       title: "Post a Slack message",
-      description: "Post a message to Slack as the Partnership Onboarder bot, either as a new post or a thread reply.",
+      description: "Post a message to Slack as the Assistant bot, either as a new post or a thread reply.",
       inputSchema: {
         channel: z.string().describe("Slack channel ID, for example C0123456789"),
         text: z.string().min(1).max(4000).describe("The message to post"),
@@ -114,7 +114,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (_req, res) => {
-  res.send("Partnership Slack MCP server is running.");
+  res.send("Assistant Bot Slack MCP server is running.");
 });
 
 app.get("/health", (_req, res) => {
